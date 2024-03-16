@@ -19,7 +19,7 @@ extension Navigable {
   }
 
   func root() {
-    path.removeLast(path.count - 1)
+    path = .init()
   }
 
   func pop() {

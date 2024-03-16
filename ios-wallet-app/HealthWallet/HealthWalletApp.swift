@@ -27,6 +27,7 @@ struct HealthWalletApp: App {
         WalletView()
       }
     }
+    .environmentObject(walletNavigation)
     .modelContainer(sharedModelContainer)
   }
 }

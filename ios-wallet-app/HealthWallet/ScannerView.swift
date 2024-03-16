@@ -29,6 +29,10 @@ struct ScannerView: View {
         fetchCredentials()
       } else if url.lastPathComponent.contains("insurance") {
         fetchInsurance()
+      } else if url.lastPathComponent.contains("doctorRequest") {
+        fetchPresentation()
+      } else if url.lastPathComponent.contains("pharmacy") {
+        fetchPharmacyPresentation()
       }
     }
   }
@@ -40,12 +44,9 @@ struct ScannerView: View {
   @State private var isLoading = false
 
   @Environment(\.modelContext) private var modelContext
+  @EnvironmentObject private var navigation: WalletNavigation
 
   private func fetchCredentials() {
-    defer {
-      isLoading = false
-    }
-
     Task {
       let api = IssuerAPI(provider: .init(baseURL: Config.issuerBaseURL))
       do {
@@ -53,25 +54,55 @@ struct ScannerView: View {
         for credential in credentials {
           modelContext.insert(credential)
         }
+        terminate()
       } catch {
+        terminate()
       }
     }
   }
 
   private func fetchInsurance() {
-    defer {
-      isLoading = false
-    }
-
     Task {
       let api = IssuerAPI(provider: .init(baseURL: Config.issuerBaseURL))
       do {
         let insurance = try await api.getInsurance()
         modelContext.insert(insurance)
+        terminate()
       } catch {
-        print("Issue.")
+        terminate()
       }
     }
+  }
+
+  private func fetchPresentation() {
+    Task {
+      let api = VerifierAPI(provider: .init(baseURL: Config.verifierBaseURL))
+      do {
+        let presentationRequest = try await api.doctorRequest()
+        isLoading = false
+        navigation.push(WalletRoute.presentation(presentationRequest))
+      } catch {
+        terminate()
+      }
+    }
+  }
+
+  private func fetchPharmacyPresentation() {
+    Task {
+      let api = VerifierAPI(provider: .init(baseURL: Config.pharmacyBaseURL))
+      do {
+        let presentationRequest = try await api.pharmacyRequest()
+        isLoading = false
+        navigation.push(WalletRoute.presentation(presentationRequest))
+      } catch {
+        terminate()
+      }
+    }
+  }
+
+  private func terminate() {
+    isLoading = false
+    navigation.pop()
   }
 
 }

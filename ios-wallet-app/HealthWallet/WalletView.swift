@@ -18,17 +18,22 @@ struct WalletView: View {
           Color(uiColor: .tertiarySystemGroupedBackground)
             .blur(radius: 3.0)
             .clipShape(RoundedRectangle(cornerRadius: 16))
-            .frame(maxWidth: .infinity, idealHeight: 225)
+            .frame(maxWidth: .infinity, minHeight: 225, maxHeight: 225)
             .overlay {
               VStack(spacing: 24) {
                 Image(systemName: "qrcode")
                   .resizable()
                   .aspectRatio(contentMode: .fit)
-                  .frame(width: 44, height: 44)
-                Text("Scan your insurance card QRCode")
+                  .frame(width: 70, height: 70)
+                Text("Scan your insurance card QRCode or request one at your insurance company.")
+                  .frame(maxWidth: 300)
+                  .multilineTextAlignment(.center)
               }
             }
             .padding()
+            .onTapGesture {
+              navigation.push(WalletRoute.scanner)
+            }
         }
 
         VStack {
@@ -45,14 +50,19 @@ struct WalletView: View {
 
       actionBar()
     }
-    .onShake {
-      do {
-        try modelContext.delete(model: Credential.self)
-        try modelContext.delete(model: InsuranceCredential.self)
-      } catch {
-        print(error.localizedDescription)
-        print("Failed to clear DB.")
+    .alert("Wipe database ?", isPresented: $presentDeleteConfirmation, actions: {
+      Button(role: .destructive) {
+        wipeDatabase()
+      } label: {
+        Text("Confirm")
       }
+
+      Button(role: .cancel) {} label: {
+        Text("Cancel")
+      }
+    })
+    .onShake {
+      presentDeleteConfirmation = true
     }
     .navigationTitle("HealthWallet")
     .navigationBarTitleDisplayMode(.large)
@@ -63,13 +73,25 @@ struct WalletView: View {
 
   @State private var selectedCategory: CredentialType = .all
   @State private var dates: Set<DateComponents> = .init()
+  @State private var presentDeleteConfirmation = false
 
   @Query private var insurances: [InsuranceCredential]
 
   @Environment(\.modelContext) private var modelContext
+  @EnvironmentObject private var navigation: WalletNavigation
 
   private func refresh() async {
     try? await Task.sleep(for: .seconds(1))
+  }
+
+  private func wipeDatabase() {
+    do {
+      try modelContext.delete(model: Credential.self)
+      try modelContext.delete(model: InsuranceCredential.self)
+    } catch {
+      print(error.localizedDescription)
+      print("Failed to clear DB.")
+    }
   }
 
   @ViewBuilder
