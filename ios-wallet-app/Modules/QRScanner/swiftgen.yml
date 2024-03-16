@@ -1,0 +1,8 @@
+xcassets:
+  inputs:
+    - Sources/QRScanner/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Sources/QRScanner/Module/Assets.swift
+      params:
+        enumName: Assets

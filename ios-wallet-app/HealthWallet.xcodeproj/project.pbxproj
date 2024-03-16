@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932FA8C92BA37E1100B3B900 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA8C82BA37E1100B3B900 /* Date+Extension.swift */; };
+		932FA8CB2BA3831900B3B900 /* CredentialCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932FA8CA2BA3831900B3B900 /* CredentialCard.swift */; };
+		933F134A2BA4413F000AE6CE /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 933F13492BA4413F000AE6CE /* QRScanner */; };
+		933F134C2BA44190000AE6CE /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933F134B2BA44190000AE6CE /* ScannerView.swift */; };
 		9341850D2BA32528000A2793 /* HealthWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341850C2BA32528000A2793 /* HealthWalletApp.swift */; };
-		9341850F2BA32528000A2793 /* WalletDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341850E2BA32528000A2793 /* WalletDashboardView.swift */; };
+		9341850F2BA32528000A2793 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341850E2BA32528000A2793 /* WalletView.swift */; };
 		934185112BA32528000A2793 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934185102BA32528000A2793 /* Credential.swift */; };
 		934185132BA32528000A2793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934185122BA32528000A2793 /* Assets.xcassets */; };
 		934185162BA32528000A2793 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934185152BA32528000A2793 /* Preview Assets.xcassets */; };
@@ -16,6 +20,16 @@
 		9341852A2BA32529000A2793 /* HealthWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934185292BA32529000A2793 /* HealthWalletUITests.swift */; };
 		9341852C2BA32529000A2793 /* HealthWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341852B2BA32529000A2793 /* HealthWalletUITestsLaunchTests.swift */; };
 		9360F39C2BA365170066E60F /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360F39B2BA365170066E60F /* Seeds.swift */; };
+		937169812BA4444B0033CA28 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937169802BA4444B0033CA28 /* Navigable.swift */; };
+		937169832BA4447D0033CA28 /* WalletNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937169822BA4447D0033CA28 /* WalletNavigation.swift */; };
+		939CE8052BA44B7F00ABD0C1 /* ShakeDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939CE8042BA44B7F00ABD0C1 /* ShakeDetection.swift */; };
+		939CE8072BA4623D00ABD0C1 /* PresentationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939CE8062BA4623D00ABD0C1 /* PresentationRequest.swift */; };
+		939CE8092BA4633C00ABD0C1 /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939CE8082BA4633C00ABD0C1 /* PresentationView.swift */; };
+		93B1648F2BA390FA0051B247 /* Papyrus in Frameworks */ = {isa = PBXBuildFile; productRef = 93B1648E2BA390FA0051B247 /* Papyrus */; };
+		93B164912BA391770051B247 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B164902BA391770051B247 /* Network.swift */; };
+		93B164932BA393B00051B247 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B164922BA393B00051B247 /* Config.swift */; };
+		93B164962BA39E5A0051B247 /* Insurance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B164952BA39E5A0051B247 /* Insurance.swift */; };
+		93CF4E0A2BA4466400C0963A /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 93CF4E092BA4466400C0963A /* QRScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		932FA8C82BA37E1100B3B900 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		932FA8CA2BA3831900B3B900 /* CredentialCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialCard.swift; sourceTree = "<group>"; };
+		933F13472BA4411F000AE6CE /* QRScanner */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = QRScanner; sourceTree = "<group>"; };
+		933F134B2BA44190000AE6CE /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		934185092BA32528000A2793 /* HealthWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9341850C2BA32528000A2793 /* HealthWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWalletApp.swift; sourceTree = "<group>"; };
-		9341850E2BA32528000A2793 /* WalletDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDashboardView.swift; sourceTree = "<group>"; };
+		9341850E2BA32528000A2793 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		934185102BA32528000A2793 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		934185122BA32528000A2793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		934185152BA32528000A2793 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,6 +66,14 @@
 		934185292BA32529000A2793 /* HealthWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWalletUITests.swift; sourceTree = "<group>"; };
 		9341852B2BA32529000A2793 /* HealthWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9360F39B2BA365170066E60F /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		937169802BA4444B0033CA28 /* Navigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
+		937169822BA4447D0033CA28 /* WalletNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigation.swift; sourceTree = "<group>"; };
+		939CE8042BA44B7F00ABD0C1 /* ShakeDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeDetection.swift; sourceTree = "<group>"; };
+		939CE8062BA4623D00ABD0C1 /* PresentationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationRequest.swift; sourceTree = "<group>"; };
+		939CE8082BA4633C00ABD0C1 /* PresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
+		93B164902BA391770051B247 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		93B164922BA393B00051B247 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		93B164952BA39E5A0051B247 /* Insurance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insurance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933F134A2BA4413F000AE6CE /* QRScanner in Frameworks */,
+				93CF4E0A2BA4466400C0963A /* QRScanner in Frameworks */,
+				93B1648F2BA390FA0051B247 /* Papyrus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +104,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		933F13462BA4406F000AE6CE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				933F13472BA4411F000AE6CE /* QRScanner */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		934185002BA32528000A2793 = {
 			isa = PBXGroup;
 			children = (
+				933F13462BA4406F000AE6CE /* Modules */,
 				9341850B2BA32528000A2793 /* HealthWallet */,
 				9341851E2BA32529000A2793 /* HealthWalletTests */,
 				934185282BA32529000A2793 /* HealthWalletUITests */,
@@ -98,12 +136,19 @@
 		9341850B2BA32528000A2793 /* HealthWallet */ = {
 			isa = PBXGroup;
 			children = (
+				9371697E2BA4443E0033CA28 /* Core */,
+				93B164942BA39E4F0051B247 /* Models */,
 				9341850C2BA32528000A2793 /* HealthWalletApp.swift */,
-				9341850E2BA32528000A2793 /* WalletDashboardView.swift */,
-				934185102BA32528000A2793 /* Credential.swift */,
+				9341850E2BA32528000A2793 /* WalletView.swift */,
+				933F134B2BA44190000AE6CE /* ScannerView.swift */,
+				939CE8082BA4633C00ABD0C1 /* PresentationView.swift */,
+				932FA8CA2BA3831900B3B900 /* CredentialCard.swift */,
 				934185122BA32528000A2793 /* Assets.xcassets */,
 				934185142BA32528000A2793 /* Preview Content */,
 				9360F39B2BA365170066E60F /* Seeds.swift */,
+				932FA8C82BA37E1100B3B900 /* Date+Extension.swift */,
+				93B164902BA391770051B247 /* Network.swift */,
+				93B164922BA393B00051B247 /* Config.swift */,
 			);
 			path = HealthWallet;
 			sourceTree = "<group>";
@@ -133,6 +178,42 @@
 			path = HealthWalletUITests;
 			sourceTree = "<group>";
 		};
+		9371697E2BA4443E0033CA28 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				939CE8032BA44B6E00ABD0C1 /* Additional */,
+				9371697F2BA444420033CA28 /* Navigation */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9371697F2BA444420033CA28 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				937169802BA4444B0033CA28 /* Navigable.swift */,
+				937169822BA4447D0033CA28 /* WalletNavigation.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		939CE8032BA44B6E00ABD0C1 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				939CE8042BA44B7F00ABD0C1 /* ShakeDetection.swift */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
+		93B164942BA39E4F0051B247 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				934185102BA32528000A2793 /* Credential.swift */,
+				93B164952BA39E5A0051B247 /* Insurance.swift */,
+				939CE8062BA4623D00ABD0C1 /* PresentationRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +230,11 @@
 			dependencies = (
 			);
 			name = HealthWallet;
+			packageProductDependencies = (
+				93B1648E2BA390FA0051B247 /* Papyrus */,
+				933F13492BA4413F000AE6CE /* QRScanner */,
+				93CF4E092BA4466400C0963A /* QRScanner */,
+			);
 			productName = HealthWallet;
 			productReference = 934185092BA32528000A2793 /* HealthWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +307,10 @@
 				Base,
 			);
 			mainGroup = 934185002BA32528000A2793;
+			packageReferences = (
+				93B1648D2BA390FA0051B247 /* XCRemoteSwiftPackageReference "papyrus" */,
+				93CF4E082BA4466400C0963A /* XCLocalSwiftPackageReference "Modules/QRScanner" */,
+			);
 			productRefGroup = 9341850A2BA32528000A2793 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,10 +353,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9341850F2BA32528000A2793 /* WalletDashboardView.swift in Sources */,
+				932FA8CB2BA3831900B3B900 /* CredentialCard.swift in Sources */,
+				932FA8C92BA37E1100B3B900 /* Date+Extension.swift in Sources */,
+				937169832BA4447D0033CA28 /* WalletNavigation.swift in Sources */,
+				9341850F2BA32528000A2793 /* WalletView.swift in Sources */,
 				934185112BA32528000A2793 /* Credential.swift in Sources */,
+				939CE8072BA4623D00ABD0C1 /* PresentationRequest.swift in Sources */,
+				937169812BA4444B0033CA28 /* Navigable.swift in Sources */,
 				9360F39C2BA365170066E60F /* Seeds.swift in Sources */,
+				93B164962BA39E5A0051B247 /* Insurance.swift in Sources */,
+				93B164932BA393B00051B247 /* Config.swift in Sources */,
+				939CE8052BA44B7F00ABD0C1 /* ShakeDetection.swift in Sources */,
+				93B164912BA391770051B247 /* Network.swift in Sources */,
 				9341850D2BA32528000A2793 /* HealthWalletApp.swift in Sources */,
+				933F134C2BA44190000AE6CE /* ScannerView.swift in Sources */,
+				939CE8092BA4633C00ABD0C1 /* PresentationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +534,7 @@
 				DEVELOPMENT_TEAM = 2NG6YF3PM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needs to be used for sscanning QRCodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,6 +564,7 @@
 				DEVELOPMENT_TEAM = 2NG6YF3PM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needs to be used for sscanning QRCodes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -596,6 +699,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		93CF4E082BA4466400C0963A /* XCLocalSwiftPackageReference "Modules/QRScanner" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Modules/QRScanner;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93B1648D2BA390FA0051B247 /* XCRemoteSwiftPackageReference "papyrus" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joshuawright11/papyrus";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		933F13492BA4413F000AE6CE /* QRScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QRScanner;
+		};
+		93B1648E2BA390FA0051B247 /* Papyrus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B1648D2BA390FA0051B247 /* XCRemoteSwiftPackageReference "papyrus" */;
+			productName = Papyrus;
+		};
+		93CF4E092BA4466400C0963A /* QRScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QRScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 934185012BA32528000A2793 /* Project object */;
 }

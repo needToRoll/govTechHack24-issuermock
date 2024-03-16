@@ -52,6 +52,7 @@ final class Credential: Identifiable, Codable {
 
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode(id, forKey: .id)
     try container.encode(type, forKey: .type)
     try container.encode(issuedAt, forKey: .issuedAt)
     try container.encode(content, forKey: .content)
@@ -76,6 +77,7 @@ enum CredentialType: String, Codable, CaseIterable {
   case allergy = "AllergyIntolerance"
   case diagnosis = "Diagnosis"
   case medication = "Medication"
+  case unknown
 
   // MARK: Internal
 
@@ -110,7 +112,7 @@ enum CredentialType: String, Codable, CaseIterable {
     case .allergy: Image(systemName: "allergens")
     case .diagnosis: Image(systemName: "checkmark.seal")
     case .medication: Image(systemName: "hazardsign")
-    default: Image(systemName: "square")
+    default: Image(systemName: "questionmark.circle")
     }
   }
 

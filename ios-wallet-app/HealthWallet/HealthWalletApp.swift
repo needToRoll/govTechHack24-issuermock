@@ -3,9 +3,11 @@ import SwiftUI
 
 @main
 struct HealthWalletApp: App {
+
   var sharedModelContainer: ModelContainer = {
     let schema = Schema([
       Credential.self,
+      InsuranceCredential.self,
     ])
 
     let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
@@ -17,10 +19,15 @@ struct HealthWalletApp: App {
     }
   }()
 
+  @StateObject var walletNavigation: WalletNavigation = .init()
+
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      NavigationStack(path: $walletNavigation.path) {
+        WalletView()
+      }
     }
+    .environmentObject(walletNavigation)
     .modelContainer(sharedModelContainer)
   }
 }

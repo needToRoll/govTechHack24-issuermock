@@ -10,7 +10,8 @@ final class Seeds {
       let container = try ModelContainer(for: Credential.self, configurations: configuration)
 
       for i in 1...50 {
-        let credential = Credential(name: "Test", type: .allergy)
+        let entry = CredentialType.allowedCases[Int.random(in: 0..<CredentialType.allowedCases.count)]
+        let credential = Credential(type: entry)
         container.mainContext.insert(credential)
       }
 
