@@ -19,7 +19,7 @@ final class Credential: Identifiable, Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     id = try container.decode(UUID.self, forKey: .id)
     type = try container.decode(CredentialType.self, forKey: .type)
-    issuedAt = Date.generateRandomDate() ?? Date.now
+    issuedAt = try container.decode(Date.self, forKey: .issuedAt)
 
     let contentContainer = try container.nestedContainer(keyedBy: DynamicCodingKeys.self, forKey: .content)
     var contentDict = [String: String]()
@@ -48,6 +48,24 @@ final class Credential: Identifiable, Codable {
   var type: CredentialType
   var issuedAt: Date
   let content: [String: String]
+
+  var displayName: String {
+    switch type {
+    case .insurance: "Helsana"
+    case .allergy: content["allergyDescription"] ?? ""
+    case .diagnosis: content["diagnosisDescription"] ?? ""
+    case .medication: content["medicationName"] ?? ""
+    }
+  }
+
+  var displayCode: String {
+    switch type {
+    case .insurance: "BASIC"
+    case .allergy: content["allergyCode"] ?? ""
+    case .diagnosis: content["diagnosisCode"] ?? ""
+    case .medication: content["medicationCode"] ?? ""
+    }
+  }
 
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
@@ -100,6 +118,17 @@ enum CredentialType: String, Codable, CaseIterable {
     case .diagnosis: Image(systemName: "checkmark.seal")
     case .medication: Image(systemName: "hazardsign")
     }
+  }
+}
+
+extension Credential {
+  static func sample() -> Credential {
+    .init(name: "test", type: .allergy, content: [
+      "allergyCode": "L50.0",
+      "allergyDescription": "UrtikariaUrtikaria UrtikariaUrtikariaUrtikaria Urtikaria",
+      "reactionCode": "R20",
+      "severity": "3",
+    ])
   }
 }
 

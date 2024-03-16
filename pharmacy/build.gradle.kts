@@ -29,17 +29,26 @@ repositories {
 extra["springCloudAzureVersion"] = "5.10.0"
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("com.azure.spring:spring-cloud-azure-starter")
-    implementation("com.azure.spring:spring-cloud-azure-starter-actuator")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    compileOnly("org.projectlombok:lombok")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-    annotationProcessor("org.projectlombok:lombok")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    dependencies {
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("com.h2database:h2")
+        implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0")
+        implementation("org.springframework.boot:spring-boot-starter-actuator")
+        implementation("com.azure.spring:spring-cloud-azure-starter")
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
+        implementation("com.azure.spring:spring-cloud-azure-starter-actuator")
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        implementation("org.springframework.boot:spring-boot-starter-web")
+        compileOnly("org.projectlombok:lombok")
+        developmentOnly("org.springframework.boot:spring-boot-devtools")
+        annotationProcessor("org.projectlombok:lombok")
+        implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+        testImplementation("org.springframework.boot:spring-boot-starter-test")
+       implementation("com.google.zxing:javase:3.5.3")
+       implementation("com.google.zxing:core:3.5.3")
+    }
 }
-
 dependencyManagement {
     imports {
         mavenBom("com.azure.spring:spring-cloud-azure-dependencies:${property("springCloudAzureVersion")}")

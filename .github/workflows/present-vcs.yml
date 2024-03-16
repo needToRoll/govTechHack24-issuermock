@@ -1,0 +1,29 @@
+name: Present VCS API
+
+on:
+   push:
+     branches:
+       - master
+
+jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+
+      - name: Login via Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Azure Container Registry Build
+        uses: Azure/acr-build@v1
+        with:
+          service_principal: a5612f66-dd9c-437c-926e-a3f6e6d86781
+          service_principal_password: ${{ secrets.service_principal_password }}
+          tenant: 5f26d32c-f4e7-4168-bc6d-212851f1a9eb
+          image: gt-vcs-api
+          branch: master
+          repository: vcs
+          folder: ./present-vcs-api
+          registry: acrgovtech24
+          dockerfile: ./dockerfile

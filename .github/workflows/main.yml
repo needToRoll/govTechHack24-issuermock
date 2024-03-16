@@ -5,7 +5,7 @@
 # This workflow will build a package using Gradle and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-gradle
 
-name: Gradle Package
+name: Pharmacy frontend
 
 on:
   push:
@@ -34,10 +34,10 @@ jobs:
         uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
         
       - name: Grant execute permission for gradlew
-        run: chmod +x ./mock-issuer/gradlew
+        run: chmod +x ./pharmacy/gradlew
         
-      - name: maven build, clean
-        working-directory: mock-issuer
+      - name: gradle build, clean
+        working-directory: pharmacy
         run: ./gradlew bootJar
         
       - name: Login via Azure CLI
@@ -51,7 +51,7 @@ jobs:
           azure-subscription: d22712a1-56fa-41f3-91fd-a7394f68354c
           action: Deploy
           service-name: spring-springbackend-rla
-          app-name: govtech24-springbackend
+          app-name: pharma-frontend
           use-staging-deployment: false
-          package: mock-issuer/build/libs/govtech24-issuer-mock-0.0.1-SNAPSHOT.jar
+          package: pharmacy/build/libs/govtech24-ssi-health-pharmacy-0.0.1-SNAPSHOT.jar
     

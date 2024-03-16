@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Next Gen Pharmacy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h1>Next Gen Pharmacy</h1>
+    <h2>Patient</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${person.holderName}"></h5>
+            <p class="card-text">AHV Number: <span th:text="${person.cardNumber}"></span></p>
+            <p class="card-text">Insurance company: <span th:text="${person.insuranceCompany}"></span></p>
+        </div>
+    </div>
+    <h2>Medications</h2>
+    <div class="row mt-4">
+        <div class="col-md-6 mb-4" th:each="medication : ${medications}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${medication.content.medicationName}"></h5>
+                    <p class="card-text">Issue Date: <span th:text="${medication.issueDate}"></span></p>
+                    <p class="card-text">Dosage Instruction: <span th:text="${medication.content.dosageInstruction}"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a h></a>
+</div>
+
+</body>
+</html>

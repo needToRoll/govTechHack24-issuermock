@@ -1,0 +1,15 @@
+<!DOCTYPE<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+<h3>Scan QR Code to share your medications</h3>
+<!-- Assuming your Base64 string is stored in a variable called 'imageBase64' in your model -->
+<img th:src="'data:image/png;base64,' + ${imageBase64}" alt="QR Code">
+<a th:href="@{/pharmacy/medications/{id}(id=${prId})}">Display medication overview</a>
+
+</body>
+</html>
